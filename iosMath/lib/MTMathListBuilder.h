@@ -11,7 +11,7 @@
 
 @import Foundation;
 
-#import "MTMathList.h"
+#import <MTMathList.h>
 
 FOUNDATION_EXPORT NSString *const _Nonnull MTParseError;
 

@@ -30,10 +30,10 @@ typedef CGRect          MTRect;
 
 #else
 @import AppKit;
-#import "NSBezierPath+addLineToPoint.h"
-#import "NSView+backgroundColor.h"
-#import "NSColor+HexString.h"
-#import "MTLabel.h"
+#import <NSBezierPath+addLineToPoint.h>
+#import <NSView+backgroundColor.h>
+#import <NSColor+HexString.h>
+#import <MTLabel.h>
 
 typedef NSView          MTView;
 typedef NSColor         MTColor;
