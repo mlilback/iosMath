@@ -15,10 +15,12 @@
 // This header file is imported by Foudation.
 //#include <TargetConditionals.h>
 
-#import <MTConfig.h>
-
-#import <MTFont.h>
-#import <MTMathList.h>
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wquoted-include-in-framework-header"
+#import "MTConfig.h"
+#import "MTFont.h"
+#import "MTMathList.h"
+#pragma clang diagnostic pop
 
 NS_ASSUME_NONNULL_BEGIN
 

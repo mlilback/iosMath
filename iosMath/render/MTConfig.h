@@ -29,11 +29,16 @@ typedef CGRect          MTRect;
 #define MTGraphicsGetCurrentContext() UIGraphicsGetCurrentContext()
 
 #else
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wquoted-include-in-framework-header"
+
 @import AppKit;
-#import <NSBezierPath+addLineToPoint.h>
-#import <NSView+backgroundColor.h>
-#import <NSColor+HexString.h>
-#import <MTLabel.h>
+#import "NSBezierPath+addLineToPoint.h"
+#import "NSView+backgroundColor.h"
+#import "NSColor+HexString.h"
+#import "MTLabel.h"
+
+#pragma clang diagnostic pop
 
 typedef NSView          MTView;
 typedef NSColor         MTColor;

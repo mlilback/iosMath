@@ -11,7 +11,10 @@
 
 @import Foundation;
 
-#import <MTMathList.h>
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wquoted-include-in-framework-header"
+#import "MTMathList.h"
+#pragma clang diagnostic pop
 
 FOUNDATION_EXPORT NSString *const _Nonnull MTParseError;
 
