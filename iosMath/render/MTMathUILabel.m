@@ -47,6 +47,7 @@
     MTFont* font = [MTFontManager fontManager].defaultFont;
     self.font = font;
     _textAlignment = kMTTextAlignmentLeft;
+	_verticalAlignment = kMTVerticalAlignmentCenter;
     _displayList = nil;
     _displayErrorInline = true;
     self.backgroundColor = [MTColor clearColor];
@@ -204,7 +205,11 @@
             // Set the height to the half the size of the font
             height = _fontSize/2;
         }
-        CGFloat textY = (availableHeight - height) / 2 + _displayList.descent + self.contentInsets.bottom;
+		CGFloat textY = (availableHeight - height) / 2 + _displayList.descent + self.contentInsets.bottom;
+		// position at top
+		if (_verticalAlignment == kMTVerticalAlignmentTop) {
+        	textY = (availableHeight - height) + _displayList.descent + self.contentInsets.bottom;
+		}
         _displayList.position = CGPointMake(textX, textY);
     } else {
         _displayList = nil;

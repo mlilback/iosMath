@@ -45,6 +45,17 @@ typedef NS_ENUM(unsigned int, MTTextAlignment) {
     kMTTextAlignmentRight,
 };
 
+/**
+ @typedef MTVerticalAlignment
+ @brief Vertical alignment for 'MTMathUILabel'. Center behaves as original, top only uses the contentInset.top
+ */
+typedef NS_ENUM(unsigned int, MTVerticalAlignment) {
+	/// Align to top
+	kMTVerticalAlignmentTop,
+	/// Align center (the default)
+	kMTVerticalAlignmentCenter
+};
+
 /** The main view for rendering math.
  
  `MTMathLabel` accepts either a string in LaTeX or an `MTMathList` to display. Use
@@ -100,6 +111,9 @@ IB_DESIGNABLE @interface MTMathUILabel : MTView
 
 /** Horizontal alignment for the text. The default is align left. */
 @property (nonatomic) MTTextAlignment textAlignment;
+
+/** Vertical alignment for the text. The default is center. */
+@property (nonatomic) MTVerticalAlignment verticalAlignment;
 
 /** The internal display of the MTMathUILabel. This is for advanced use only. */
 @property (nonatomic, readonly, nullable) MTMathListDisplay* displayList;
